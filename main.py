@@ -9,6 +9,7 @@ MY_LNG = 106.5348
 
 MY_EMAIL = "test@gmail.com"
 MY_PASSWORD = "app-generated-password-goes-here"
+SEND_TO_EMAIL = "ilovetheISS@gmail.com"
 
 REFRESH_TIME = 60
 
@@ -55,7 +56,7 @@ class ISSNotifier:
             connection.starttls()
             connection.login(user=MY_EMAIL, password=MY_PASSWORD)
             connection.sendmail(from_addr=MY_EMAIL,
-                                to_addrs="ilovetheISS@gmail.com",
+                                to_addrs=SEND_TO_EMAIL,
                                 msg=f"The ISS is Above!\n\n{email_body}")
 
     def main_loop(self):
